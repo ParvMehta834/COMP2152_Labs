@@ -16,13 +16,13 @@ def use_loot(belt, health_points):
     first_item = belt.pop(0)
     if first_item in good_loot_options:
         health_points = min(20, (health_points + 2))
-        print("    |    You used " + first_item +" to up your health to " + str(health_points) )
+        print("    |    You used " + first_item +" to up your health to " + str(health_points))
     elif first_item in bad_loot_options:
-        health_points = max(20,(health_points -2))
-        print("    |    You used " + first_item + " to hurt your health to " +str(health_points) )
+        health_points = max(20, (health_points - 2))
+        print("    |    You used " + first_item + " to hurt your health to " + str(health_points))
     else:
-        print("    |    You used " +  + " but it's not helpful")
-    return 
+        print("    |    You used " + first_item + " but it's not helpful")
+    return belt,health_points
 
 
 # Lab 5: Question 3 
@@ -42,6 +42,7 @@ def collect_loot(loot_options, belt):
           @                  @@         
               @@@@@@@@@@@@          
               """
+    # 2GHF
     print(ascii_image3)
     loot_roll = random.choice(range(1, len(loot_options) + 1))
     loot = loot_options.pop(loot_roll - 1)
